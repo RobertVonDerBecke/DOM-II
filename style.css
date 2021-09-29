@@ -1,0 +1,32 @@
+.main-navigation.on {
+    background-image: url('https://images.unsplash.com/photo-1520942702018-0862200e6873?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom;
+    color: #fcba4c;
+}
+.main-navigation.on h1 {
+    padding-left: 2rem;
+    font-size: 3rem;
+    text-shadow: 1px 1px 2px black;
+}
+.container.nav-container{
+    display: flex;
+    align-items: center;
+}
+.main-navigation.on nav {
+    display: flex;
+    margin: 2%;
+}
+.main-navigation.on nav a {
+    text-decoration: none;
+    
+    border: 1px solid black;
+    padding: 3px;
+    color: #fcba4c;
+    text-shadow: 1px 1px 2px black;
+
+}
+
+
+
