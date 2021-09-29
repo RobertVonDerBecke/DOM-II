@@ -23,10 +23,8 @@ function zoom(event) {
     logo.style.transform = `scale(${scale})`;
   }
   //mouse over
-  let noDisplay = false;
   const byebye = function(e) {
       e.target.style = "display: none;"
-      noDisplay = true;
   }
   
   const imgs = document.querySelectorAll('img')
@@ -45,7 +43,6 @@ document.addEventListener('keydown', escKey)//4
 //double click
 
 const background = document.querySelector('.container.home');
-background.setAttribute('z-index', '10');
  function setBackground(e){
      background.classList.toggle('badBus')
  }
@@ -55,6 +52,7 @@ background.setAttribute('z-index', '10');
 const p = document.querySelectorAll('p');
 function biggySmalls(e){
     e.target.style = 'font-size: 5rem;'
+    e.stopPropagation()
 }
 function smallsBiggy(e){
     e.target.style = 'font-size: 1rem;'
@@ -88,3 +86,11 @@ function deleteWord() {
   let selection = window.getSelection();
   selection.deleteFromDocument();
 }
+const links = document.querySelectorAll('.nav-links')
+Array.from(links).forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        
+    
+    })
+})
