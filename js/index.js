@@ -19,7 +19,7 @@ const nav = document.querySelector('.main-navigation');
 nav.addEventListener('click', addCSS)
 
 //wheel event
-const bus = document.querySelector('.intro img')
+const bus = document.querySelector('.main-navigation')
 bus.addEventListener('wheel', zoom)
 let scale = 1;
 function zoom(event) {
@@ -34,22 +34,26 @@ function zoom(event) {
     bus.style.transform = `scale(${scale})`;
   }
   //mouse over
+  let noDisplay = false;
   const byebye = function(e) {
       e.target.style = "display: none;"
+      noDisplay = true;
   }
   
   const imgs = document.querySelectorAll('img')
   imgs.forEach(img => {
-      img.addEventListener('mouseover', byebye)
+    img.addEventListener('mouseover', byebye)
   })
 
-  //keypress
-  document.addEventListener('keypress', (e)=> {
-    if(keypress === 'Escape') {
-        window.location.reload();
-    }
-  })
-
+//   keypress
+function escKey(e){
+      if(e.key === 'Escape'){
+          let img = document.querySelectorAll('img');
+          Array.from(img).forEach(img => img.style = "display: block;")
+      }
+  }
+document.addEventListener('keydown', escKey)
+//mouse out
 
 
 
